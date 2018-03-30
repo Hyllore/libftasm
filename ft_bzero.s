@@ -12,5 +12,5 @@ _loop:
 	jmp _loop
 
 _end_loop_bzero:
-	leave
+	pop rbp
 	ret
