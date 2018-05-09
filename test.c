@@ -6,7 +6,7 @@
 /*   By: droly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 11:08:40 by droly             #+#    #+#             */
-/*   Updated: 2018/03/30 16:55:13 by droly            ###   ########.fr       */
+/*   Updated: 2018/05/09 16:40:53 by droly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,61 @@ int	main(void)
 	printf("\tTab init = %s, %p\n", tab, ft_strcat(tab, ""));
 	printf("\tTab init = %s, %p\n", tab, ft_strcat(tab, "tutut"));
 	printf("\tTab init = %s, %p\n", tab, ft_strcat(tab, ""));
-	printf("\nft_isalpha\n");
+	printf("\nft_isalpha\n"	);
 	char truc[] = "AxZsP.* \\^";
-	truc[10] = 0;
 	size_t i;
 
-	for(i = 0; truc[i] != -1; i++)
+	for (i = 0; truc[i] != '\0'; i++)
 		printf("\tft_isalpha = %5s = %5s pour '%c'\n", ft_isalpha(truc[i]) == 1 ? "true" : "false", isalpha(truc[i]) == 1 ? "true" : "false", truc[i]);
+
+	printf("\nft_isdigit\n"	);
+	for(i = '.'; i < ';'; i++)
+		printf("\tft_isdigit = %5s = %5s pour '%c'\n", ft_isdigit(i) == 1 ? "true" : "false", isdigit(i) == 1 ? "true" : "false", (int)i);
+
+	printf("\nft_isalnum\n");
+	char truc2[] = "<w~P.68 7* as['?";
+
+	for(i = 0; truc2[i] != '\0'; i++)
+		printf("\tft_isalnum = %5s = %5s pour '%c'\n", ft_isalnum(truc2[i]) == 1 ? "true" : "false", isalnum(truc2[i]) == 1 ? "true" : "false", truc2[i]);
+
+	printf("\nft_isascii\n");
+	int truc3[LEN_TAB] = {-12, 'a', 'T',						128, 0, 127, INT_MAX, INT_MIN, '$', '\t'};
+
+	for(i = 0; i < LEN_TAB; i++)
+		printf("\tft_isacii = %5s = %5s pour '%d'\n", ft_isascii(truc3[i]) == 1 ? "true" : "false", isascii(truc3[i]) == 1 ? "true" : "false", truc3[i]);
+
+	printf("\nft_isprint\n");
+	int truc4[LEN_TAB] = {30, 31, 32, 33, 125, 126, 127, INT_MIN, -12, 73};
+
+	for(i = 0; i < LEN_TAB; i++)
+		printf("\tft_isprint = %5s = %5s pour '%d'\n", ft_isprint(truc4[i]) == 1 ? "true" : "false", isprint(truc4[i]) == 1 ? "true" : "false", truc4[i]);
+
+	char tab123[LEN_TAB] = "";
+	char base_123[] = "12F*&G fhg";
+	printf("\nft_toupper\n");
+	ft_bzero(tab, sizeof(tab));
+	ft_strncat(tab, base_123, LEN_TAB);
+	ft_strncat(tab123, base_123, LEN_TAB);
+	for(i = 0; tab[i] != '\0'; i++)
+	{
+		tab[i] = ft_toupper(tab[i]);
+		tab123[i] = toupper(tab123[i]);
+	}
+	printf("\ttab    = %s\n", tab);
+	printf("\ttab123 = %s\n", tab123);
+
+	printf("\nft_tolower\n");
+	for(i = 0; tab[i] != '\0'; i++)
+	{
+		tab[i] = ft_tolower(tab[i]);
+		tab123[i] = tolower(tab123[i]);
+	}
+	printf("\ttab    = %s\n", tab);
+	printf("\ttab123 = %s\n", tab123);
+
+	printf("\nft_puts\n");
+	printf("%d = ret ft_puts\n", ft_puts("Je suis florian"));
+	printf("%d = ret    puts\n", puts("Je suis florian"));
+	printf("%d = ret ft_puts\n", ft_puts(""));
+	printf("%d = ret    puts\n", puts(""));
 }
