@@ -6,7 +6,7 @@
 /*   By: droly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 11:08:40 by droly             #+#    #+#             */
-/*   Updated: 2018/05/09 16:40:53 by droly            ###   ########.fr       */
+/*   Updated: 2018/05/11 14:10:42 by droly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,16 @@ int	main(void)
 	}
 	printf("\ttab    = %s\n", tab);
 	printf("\ttab123 = %s\n", tab123);
+
+
+	printf("\nft_strlen\n");
+	char s0[] = "";
+	char s1[] = "gajkdgjasgdjhas";
+	char s2[] = "asd";
+
+	printf("\t'%s' len = %zu\n", s0, ft_strlen(s0));
+	printf("\t'%s' len = %zu\n", s1, ft_strlen(s1));
+	printf("\t'%s' len = %zu\n", s2, ft_strlen(s2));
 
 	printf("\nft_puts\n");
 	printf("%d = ret ft_puts\n", ft_puts("Je suis florian"));

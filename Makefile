@@ -6,7 +6,7 @@
 #    By: droly <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/29 16:36:24 by droly             #+#    #+#              #
-#    Updated: 2018/05/09 15:57:06 by droly            ###   ########.fr        #
+#    Updated: 2018/05/11 14:08:43 by droly            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC = ft_bzero.s \
 	  ft_toupper.s\
 	  ft_tolower.s\
 	  ft_puts.s\
+	  ft_strlen.s\
 
 OBJ = $(SRC:.s=.o)
 
