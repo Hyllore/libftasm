@@ -6,10 +6,9 @@ _ft_strlen:
 	xor r8, r8
 
 _main:
-	cmp [rdi + r8], byte 0
+	repnz cmp [rdi + r8], byte 0
 	je _end
 	inc r8
-	jmp _main
 
 _end:
 	mov rax, r8

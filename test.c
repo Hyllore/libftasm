@@ -6,7 +6,7 @@
 /*   By: droly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 11:08:40 by droly             #+#    #+#             */
-/*   Updated: 2018/05/11 14:10:42 by droly            ###   ########.fr       */
+/*   Updated: 2018/05/14 14:09:01 by droly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,8 +124,8 @@ int	main(void)
 	printf("\t'%s' len = %zu\n", s2, ft_strlen(s2));
 
 	printf("\nft_puts\n");
-	printf("%d = ret ft_puts\n", ft_puts("Je suis florian"));
-	printf("%d = ret    puts\n", puts("Je suis florian"));
-	printf("%d = ret ft_puts\n", ft_puts(""));
-	printf("%d = ret    puts\n", puts(""));
+	printf("\t%d = ret ft_puts :\n", ft_puts("Je suis florian"));
+	printf("\t%d = ret    puts :\n", puts("Je suis florian"));
+	printf("\t%d = ret ft_puts :\n", ft_puts(""));
+	printf("\t%d = ret    puts :\n", puts(""));
 }

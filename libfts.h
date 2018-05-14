@@ -6,7 +6,7 @@
 /*   By: droly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:30:25 by droly             #+#    #+#             */
-/*   Updated: 2018/05/11 14:09:26 by droly            ###   ########.fr       */
+/*   Updated: 2018/05/14 11:40:08 by droly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_puts(const char *string);
+void	ft_putstr(const char *string);
 size_t	ft_strlen(const char *s);
 
 
