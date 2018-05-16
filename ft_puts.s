@@ -11,9 +11,9 @@ _ft_puts:
 
 _main:
 	call _ft_putstr
-	lea rdi, [rel hello.string]
+;	lea rdi, [rel hello.string]
 ;	mov rdi, hello.string
-	call _ft_putstr
+;	call _ft_putstr
 	mov rax, 10
 	pop rbp
 	ret

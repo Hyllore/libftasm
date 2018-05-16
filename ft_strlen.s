@@ -1,5 +1,5 @@
 section .text
-	global _ft_strlen
+global _ft_strlen
 
 _ft_strlen:
 	push rbp
@@ -8,6 +8,7 @@ _ft_strlen:
 	cld
 	repnz scasb
 	not rcx
-	lea rax, [rcx - 1]
+	mov rax, rcx
+	dec rax
 	pop rbp
 	ret

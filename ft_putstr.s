@@ -1,5 +1,4 @@
-%define MACH_SYSCALL(nb)	0x2000000 | nb
-%define WRITE 4
+%define WRITE 0x2000004
 %define STDOUT 1
 
 section .text
@@ -10,13 +9,13 @@ _ft_putstr:
 	push rbp
 
 _main:
+	mov r12, rdi
 	call _ft_strlen
-	cmp rax, 0
-	je _end
+	mov rdi, r12
+	mov rdx, rax
 	lea rsi, [rel rdi]
 	mov rdi, STDOUT
-	mov rdx, rax
-	mov rax, MACH_SYSCALL(WRITE)
+	mov rax, WRITE
 	syscall
 	pop rbp
 	ret
