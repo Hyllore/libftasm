@@ -6,7 +6,7 @@
 /*   By: droly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 10:30:25 by droly             #+#    #+#             */
-/*   Updated: 2018/05/16 16:53:27 by droly            ###   ########.fr       */
+/*   Updated: 2018/05/17 12:09:47 by droly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ void	ft_putstr(const char *string);
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+char	*ft_strdup(const char *s);
 
 #endif

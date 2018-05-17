@@ -6,7 +6,7 @@
 #    By: droly <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/29 16:36:24 by droly             #+#    #+#              #
-#    Updated: 2018/05/16 16:52:26 by droly            ###   ########.fr        #
+#    Updated: 2018/05/17 12:10:22 by droly            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRC = ft_bzero.s \
 	  ft_strlen.s\
 	  ft_puts.s\
 	  ft_memset.s\
-	  ft_memcpy.s
+	  ft_memcpy.s\
+	  ft_strdup.s
 
 OBJ = $(SRC:.s=.o)
 
