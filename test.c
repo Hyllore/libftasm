@@ -6,7 +6,7 @@
 /*   By: droly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 11:08:40 by droly             #+#    #+#             */
-/*   Updated: 2018/05/14 14:09:01 by droly            ###   ########.fr       */
+/*   Updated: 2018/05/18 11:00:08 by droly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,9 +123,45 @@ int	main(void)
 	printf("\t'%s' len = %zu\n", s1, ft_strlen(s1));
 	printf("\t'%s' len = %zu\n", s2, ft_strlen(s2));
 
-	printf("\nft_puts\n");
-	printf("\t%d = ret ft_puts :\n", ft_puts("Je suis florian"));
-	printf("\t%d = ret    puts :\n", puts("Je suis florian"));
-	printf("\t%d = ret ft_puts :\n", ft_puts(""));
-	printf("\t%d = ret    puts :\n", puts(""));
+	/*printf("\nft_puts\n");
+	  printf("%d = ret ft_puts :\n", ft_puts("Je suis florian"));
+	  printf("%d = ret    puts :\n", puts("Je suis florian"));
+	  printf("%d = ret ft_puts :\n", ft_puts(""));
+	  printf("%d = ret    puts :\n", puts(""));*/
+
+	printf("\nft_memset\n");
+	test1.i = 12123;
+	test1.tab[0] = '\0'; //pour pouvoir faire fonctionner strncat
+	strncat(test1.tab, "Jean de la moulassan", LEN_TAB);
+	test1.val = 312.908;
+	test1.ptr = ft_memset;
+	print_tests(test1, "memset_init");
+	ft_memset(&test1, 0, sizeof(test1));
+	print_tests(test1, "memset done");
+	t_test test2;
+	printf("\nft_memcpy\n");
+	print_tests(test1, "memcpy_init");
+	ft_memcpy(&test2, &test1,sizeof(test2));
+	print_tests(test2, "memcpy_done");
+	printf("\nft_strdup\n");
+	char	*ret1 = ft_strdup("je suis une pomme rouge");
+	char	*ret2 = ft_strdup("");
+	printf("dest = %s ret2 = '%s'\n", ret1, ret2);
+	ret1 = strdup("je suis une pomme rouge");
+	ret2 = strdup("");
+	printf("dest = %s ret2 = '%s'\n", ret1, ret2);
+
+	printf("\nft_cat\n");
+	int fd;
+	ft_cat(1);
+	if ((fd = open("libfts/libfts.h", O_RDONLY)) > -1)
+	{
+		ft_cat(fd);
+	}
+	if ((fd = open("libfts/libfts.h", O_WRONLY)) > -1)
+	{
+		ft_cat(fd);
+	}
+	ft_cat(-1);
+	return (EXIT_SUCCESS);
 }
