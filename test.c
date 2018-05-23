@@ -6,7 +6,7 @@
 /*   By: droly <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/30 11:08:40 by droly             #+#    #+#             */
-/*   Updated: 2018/05/18 11:00:08 by droly            ###   ########.fr       */
+/*   Updated: 2018/05/23 16:43:51 by droly            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,24 @@ void	print_tests(t_test const test, char const *name)
 			name, test.i, name, test.tab, name, test.val, name, test.ptr);
 }
 
+char	*ft_strncat(char *s1, const char *s2, size_t n)
+{
+	int i;
+	int i2;
 
+	i = 0;
+	i2 = 0;
+	while (s1[i] != '\0')
+		i++;
+	while (s2[i2] != '\0' && i2 < (int)n)
+	{
+		s1[i] = s2[i2];
+		i++;
+		i2++;
+	}
+	s1[i] = '\0';
+	return (s1);
+}
 
 int	main(void)
 {
@@ -44,7 +61,7 @@ int	main(void)
 	t_test test1;
 	test1.i = 12;
 	test1.tab[0] = '\0'; //pour pouvoir faire fonctionner strncat
-	strncat(test1.tab, "Florian Pasquereau", LEN_TAB);
+	strncat(test1.tab, "dorian roly", LEN_TAB);
 	test1.val = 12312.908;
 	test1.ptr = &test1;
 	print_tests(test1, "bzero_init");
@@ -56,7 +73,7 @@ int	main(void)
 	printf("ft_strcat\n");
 	char tab[LEN_TAB + 1] = "S ";
 	printf("\tTab init = %p\n", tab);
-	printf("\tTab init = %s, %p\n", tab, ft_strcat(tab, "Florian"));
+	printf("\tTab init = %s, %p\n", tab, ft_strcat(tab, "dorian"));
 	ft_bzero(tab, sizeof(tab));
 	printf("\tTab init = %s, %p\n", tab, ft_strcat(tab, ""));
 	printf("\tTab init = %s, %p\n", tab, ft_strcat(tab, "tutut"));
@@ -123,11 +140,11 @@ int	main(void)
 	printf("\t'%s' len = %zu\n", s1, ft_strlen(s1));
 	printf("\t'%s' len = %zu\n", s2, ft_strlen(s2));
 
-	/*printf("\nft_puts\n");
-	  printf("%d = ret ft_puts :\n", ft_puts("Je suis florian"));
-	  printf("%d = ret    puts :\n", puts("Je suis florian"));
-	  printf("%d = ret ft_puts :\n", ft_puts(""));
-	  printf("%d = ret    puts :\n", puts(""));*/
+	printf("\nft_puts\n");
+	printf("%d = ret ft_puts :\n", ft_puts("Je suis dorian"));
+	printf("%d = ret    puts :\n", puts("Je suis dorian"));
+	printf("%d = ret ft_puts :\n", ft_puts(""));
+	printf("%d = ret    puts :\n", puts(""));
 
 	printf("\nft_memset\n");
 	test1.i = 12123;
@@ -153,15 +170,17 @@ int	main(void)
 
 	printf("\nft_cat\n");
 	int fd;
-	ft_cat(1);
-	if ((fd = open("libfts/libfts.h", O_RDONLY)) > -1)
+	ft_cat(4);
+	if ((fd = open("ft_strcat.s", O_RDONLY)) > -1)
 	{
 		ft_cat(fd);
 	}
-	if ((fd = open("libfts/libfts.h", O_WRONLY)) > -1)
+	close(fd);
+	if ((fd = open("libfts.h", O_RDONLY)) > -1)
 	{
 		ft_cat(fd);
 	}
+	close(fd);
 	ft_cat(-1);
 	return (EXIT_SUCCESS);
 }
